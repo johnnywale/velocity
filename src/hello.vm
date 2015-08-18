@@ -1,6 +1,12 @@
+#macro( entity $name $target)$target.get($key.intern($name))#end
 #set( $iAmVariable = "good!" )
 Welcome $name to $key
-today is $date.
+today is $date.  ${person}    $person.getBasis()[0]
+#entity("fname",$person)
+
+$person.size()
+$person.fly()
+$person.basename
 #foreach ($i in $list)
     $i
 #end
