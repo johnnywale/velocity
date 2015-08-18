@@ -1,0 +1,7 @@
+#set( $iAmVariable = "good!" )
+Welcome $name to $key
+today is $date.
+#foreach ($i in $list)
+    $i
+#end
+$iAmVariable
