@@ -6,6 +6,7 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.apache.velocity/velocity "1.7"]
                  [com.google.guava/guava "18.0"]
+                 [cglib/cglib "3.1"]
                   ]
 
   :main ^:skip-aot com.dashur.core

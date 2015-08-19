@@ -1,7 +1,8 @@
 Welcome name to class clojure.lang.Keyword
 today is $date.  com.dashur.core.Person@547146d7    fname
-StuLLL
+StuLLLuse cglib  StuLLL
+class com.dashur.clojure.Converter
+com.dashur.core.Person@547146d7
+use get directly  200 N Mangum
+use normal java way  200 N Mangum
 3
-$person.fly()
-$person.basename
-good!

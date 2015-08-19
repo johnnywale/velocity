@@ -1,4 +1,4 @@
-package com.dashur.code_template;
+package com.dashur.data.dto;
 public class User {
 
 public void test(){

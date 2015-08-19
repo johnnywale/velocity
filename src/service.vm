@@ -1,0 +1,39 @@
+package com.dashur.service.${entity.packageName};
+
+import com.dashur.data.SequenceType;
+import ${entity.entityClass};
+import com.dashur.data.mapper.BeanUtil;
+import com.dashur.data.volt.dao.SequenceDao;
+import com.dashur.data.volt.dao.${entity.name}Dao;
+import ${entity.updateModelClass};
+import com.dashur.service.web.model.StatusUpdateModel;
+import com.dashur.service.web.service.BasicService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+@Service
+public class ${entity.name}Service extends BasicService<${entity.name}> {
+    @Autowired
+    private ${entity.name}Dao dao;
+    @Autowired
+    private SequenceDao sequenceDao;
+    public ${entity.name} create(${entity.name} res) {
+        Optional<Long> id = sequenceDao.inc(SequenceType.${entity.sequenceType});
+        ${entity.name} dto = res.withId(id.get());
+        return dao.create(dto.partitionId(),dto).get();
+    }
+    public ${entity.name} update(Long id, ${entity.updateModel} updateModel) {
+        ${entity.name} res = load(id);
+         return dao.update(res.partitionId(), BeanUtil.merge(res, updateModel)).get();
+    }
+    @Override
+    public Optional<${entity.name}> get(Long id) {
+          return dao.findById(id.longValue());
+    }
+    public ${entity.name} updateStatus(Long id, StatusUpdateModel statusUpdateModel) {
+        ${entity.name} res = load(id);
+        return dao.update(res.partitionId(), res.withStatus(statusUpdateModel.getStatus())).get();
+    }
+}

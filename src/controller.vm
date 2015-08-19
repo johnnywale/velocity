@@ -1,0 +1,43 @@
+package com.dashur.service.${entity.packageName}.controller;
+
+import ${entity.entityClass};
+import com.dashur.service.web.model.StatusUpdateModel;
+import com.dashur.service.web.controller.BaseController;
+import com.dashur.service.${entity.packageName}.${entity.serviceName};
+import ${entity.updateModelClass};
+import com.dashur.service.web.response.ObjectResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+
+@RestController
+@RequestMapping("/$entity.url")
+public class ${entity.contrcollerName} extends BaseController {
+
+    @Autowired
+    private ${entity.name}Service service;
+
+    @RequestMapping(method = RequestMethod.POST)
+    public ObjectResponse<${entity.name}> create(@Valid @RequestBody ${entity.name} account) {
+        return success(service.create(account));
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public ObjectResponse<${entity.name}> get${entity.name}(@PathVariable("id") Long id) {
+        return success(service.load(id));
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public ObjectResponse<${entity.name}> update${entity.name}(@PathVariable("id") Long id,
+                    @Valid @RequestBody ${entity.updateModel} updateModel) {
+        return success(service.update(id, updateModel));
+    }
+
+    @RequestMapping(value = "/{id}/status", method = RequestMethod.PUT)
+    public ObjectResponse<${entity.name}> update${entity.name}Status(@PathVariable("id") Long id,
+                    @Valid @RequestBody StatusUpdateModel statusUpdateModel) {
+        return success(service.updateStatus(id, statusUpdateModel));
+    }
+
+}

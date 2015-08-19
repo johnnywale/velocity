@@ -1,13 +1,13 @@
-#macro( entity $name $target)$target.get($key.intern($name))#end
-#set( $iAmVariable = "good!" )
+#macro( from_clojure $name $target)$target.get($key.intern($name))#end
 Welcome $name to $key
 today is $date.  ${person}    $person.getBasis()[0]
-#entity("fname",$person)
-
+#from_clojure("fname",$person)
+use cglib  ${entity.fname}
+${entity.class}
+${entity.toString()}
+use get directly  ${entity.get("address.street")}
+use normal java way  ${entity.address.street}
 $person.size()
-$person.fly()
-$person.basename
 #foreach ($i in $list)
     $i
 #end
-$iAmVariable

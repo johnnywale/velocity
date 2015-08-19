@@ -1,6 +1,6 @@
 # velocity
 
-FIXME: description
+A simple project make  velocity call clojure object like java 
 
 ## Installation
 
@@ -8,21 +8,18 @@ Download from http://example.com/FIXME.
 
 ## Usage
 
-FIXME: explanation
-
-    $ java -jar velocity-0.1.0-standalone.jar [args]
+lein run
 
 ## Options
 
-FIXME: listing of options this app accepts.
+
 
 ## Examples
 
-...
+
 
 ### Bugs
 
-...
 
 ### Any Other Sections
 ### That You Think

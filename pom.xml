@@ -16,7 +16,7 @@
   <scm>
     <connection>scm:git:git://github.com/johnnywale/velocity.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/johnnywale/velocity.git</developerConnection>
-    <tag>d4d4bb84d9dc691793b176b643ac3cfabec6ccbe
+    <tag>41fcc0f32f14d5d3c5fe52d05ab341f97dcb3da1
 </tag>
     <url>https://github.com/johnnywale/velocity</url>
   </scm>
@@ -107,6 +107,11 @@
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
       <version>18.0</version>
+    </dependency>
+    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <version>3.1</version>
     </dependency>
   </dependencies>
 </project>
